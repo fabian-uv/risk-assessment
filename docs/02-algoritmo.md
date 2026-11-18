@@ -26,14 +26,14 @@ En **modo estudio**, cada paso muestra además: qué estamos haciendo, qué oper
 
 ## 2. Datos que maneja el programa
 
-Se describen como estructuras, sin lenguaje de programación todavía.
+Se describen como estructuras, sin atarse a un lenguaje de programación.
 
 ### Análisis (uno por sesión de trabajo)
 
 | Campo | Tipo | Detalle |
 |---|---|---|
 | `umbral` | dinero (pesos) | Monto catastrófico. Marca la nota 5 de Dinero |
-| `modo_estudio` | sí / no | Se puede cambiar en cualquier momento |
+| `umbral_aceptacion` | Bajo o Medio | Hasta qué nivel se acepta un riesgo sin trámite (ver `03-tratamiento.md`) |
 | `controles` | lista de Control | Se llena una vez |
 | `activos` | lista de Activo | |
 
@@ -44,6 +44,7 @@ Se describen como estructuras, sin lenguaje de programación todavía.
 | `nombre` | texto | Ej. "Carcasa Rhinoshield" |
 | `costo_anual` | dinero | Si se paga una vez: `precio ÷ años_de_vida` |
 | `origen_costo` | opción | Ver orígenes en la sección 2.1 |
+| `transfiere` | sí / no | Si es un seguro o un contrato que traspasa la pérdida a un tercero |
 
 ### Activo
 
@@ -63,7 +64,8 @@ Se describen como estructuras, sin lenguaje de programación todavía.
 | `veces`, `años` | enteros positivos | Dan el ARO (Annualized Rate of Occurrence) |
 | `FE_sin` | porcentaje (0 a 100) | Exposure Factor sin control |
 | `piezas_sin` | C, I, D (1 a 5) + duración de caída | Ver paso 2 |
-| `aplicaciones` | lista de Aplicación | Los controles que se le aplican |
+| `aplicacion` | Aplicación | El control que se le aplica (uno por amenaza) |
+| `tratamiento` | opción + formulario | Mitigar, transferir, aceptar o evitar; si se acepta por encima del umbral, el formulario de excepción (ver `03-tratamiento.md`) |
 | `origenes` | un origen por cada estimación | Ver 2.1 |
 
 ### Aplicación (un control aplicado a una amenaza)
@@ -74,7 +76,6 @@ Se describen como estructuras, sin lenguaje de programación todavía.
 | `ARO_nuevo` | opcional | Solo si el control hace que pase menos seguido |
 | `FE_nuevo` | opcional | Solo si el control hace que duela menos |
 | `piezas_nuevas` | opcional | Solo las piezas C, I, D que el control cambia |
-| `adoptado` | sí / no | Si el usuario decidió usarlo (ver paso 4) |
 
 ### 2.1 Origen de cada estimación
 
@@ -213,7 +214,7 @@ veredicto(neto):
 
 ### Paso 3. Control (el "después")
 
-**Entrada, por cada control que se aplica a la amenaza:** el control, elegido de la lista de controles del análisis o creado ahí mismo (nombre y costo anual); qué cambia (ARO, FE, piezas del impacto, o varios) con su valor nuevo y su origen, y si el usuario lo **adopta** o no.
+**Entrada:** el control de la amenaza, elegido de la lista de controles del análisis o creado ahí mismo (nombre y costo anual), y qué cambia (ARO, FE, piezas del impacto, o varios) con su valor nuevo y su origen.
 
 **Qué hace:** guarda la Aplicación. Un control nuevo entra a la lista única del análisis; si otra amenaza usa el mismo control, se elige de la lista y su costo no se pide de nuevo ni se duplica.
 
@@ -230,7 +231,7 @@ veredicto(neto):
 
 ### Paso 4. Cálculo antes y después
 
-Para cada control **adoptado** de la amenaza, o para su combinación (ver sección 6):
+Para el control de la amenaza:
 
 ```
 aro_con      = ARO_nuevo si existe, si no aro
@@ -257,7 +258,7 @@ Cuando un control se aplica a una sola amenaza, coincide con `reduccion - costo_
 
 **Salida:** ALE antes y después, reducción, costo anual, valor neto y veredicto (cuanti); P × I antes y después, puntos de mejora y si cambió de nivel (cuali).
 
-**Cuando los veredictos no coinciden** (cuanti "no conviene", cuali "mejora"), el programa muestra ambos, lo explica en una frase y **no decide por el usuario**. El usuario marca su decisión: adoptar, o no adoptar (aceptar el riesgo).
+**Cuando los veredictos no coinciden** (cuanti "no conviene", cuali "mejora"), el programa muestra ambos, lo explica en una frase y **no decide por el usuario**. La decisión es del usuario, al elegir el tratamiento (ver `03-tratamiento.md`).
 
 **Modo estudio muestra:** las dos barras (ALE sin y con control), la resta con los números puestos y la diferencia entre "lo que ahorras" y "lo que cuesta". *Errores comunes: sumar el costo a la pérdida; dividir el costo por las veces; dejar el signo mal.*
 
@@ -276,7 +277,7 @@ Cuando un control se aplica a una sola amenaza, coincide con `reduccion - costo_
 ordenar(riesgos) por (riesgo_residual descendente, ale_residual descendente)
 ```
 
-**Salida:** la matriz y la lista, cada fila con el número, el color, los puntos de mejora y la decisión del usuario (adoptó o aceptó).
+**Salida:** la matriz y la lista, cada fila con el número, el color, los puntos de mejora y el tratamiento que eligió el usuario.
 
 **Modo estudio muestra:** cómo leer la matriz y el límite del cuali (el color es grueso, por eso se muestra también el número y los puntos).
 

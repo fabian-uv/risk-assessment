@@ -19,8 +19,8 @@
 
 **Modo estudio.** Un interruptor que se puede cambiar en cualquier momento de la sesión. Los cálculos son los mismos; cambia cuánta explicación se ve. Incluye:
 
-- **Ejemplos guiados** ya resueltos (celular, disco duro y otros), que se recorren con Anterior / Siguiente.
-- **Roadmap** del recorrido, con el paso actual marcado y la **operación** que toca en cada paso (sumar, restar, multiplicar, dividir, tomar el máximo, consultar una tabla).
+- Un **ejemplo guiado** ya resuelto (el celular), que se recorre con Anterior / Siguiente y hace una pregunta antes de cada respuesta.
+- En el ejemplo, un **mapa del recorrido** con el paso actual marcado y la **operación** que toca en cada paso (sumar, restar, multiplicar, dividir, tomar el máximo, consultar una tabla).
 - **Tabla de referencia a la vista** cada vez que se pide traducir o clasificar un valor, rotulando en qué lado se está (cuanti o cuali).
 - **Errores comunes** como guía, en el paso donde un estudiante suele tropezar.
 
@@ -53,7 +53,7 @@ Cada riesgo es una pareja **activo + amenaza**. La amenaza se elige de una lista
 | **FE sin control** (Exposure Factor) | Porcentaje del valor que se pierde cada vez que pasa |
 | **P** (Probabilidad) | Sale del ARO con la tabla de la sección 4.2. Se muestra como palabra (Improbable, Posible, Ocasional, Probable, Frecuente) y se guarda el número |
 | **Piezas del impacto** | Una nota de 1 a 5 para confidencialidad, integridad y disponibilidad, más la pieza **Dinero** (ver 4.3) |
-| **Controles que se le aplican** | Se eligen de la **lista de controles** del análisis o se crean ahí mismo. Cada control se anota una vez, con su **nombre** y su **costo anual** (si el costo es de una sola vez, se divide por los años de vida); si otra amenaza usa el mismo control, se elige de la lista y su costo no se duplica. Para cada uno se indica qué cambia y con qué valor nuevo (ver 4.5) |
+| **Control que se le aplica** | Uno por amenaza. Se elige de la **lista de controles** del análisis o se crea ahí mismo. Cada control se anota una vez, con su **nombre** y su **costo anual** (si el costo es de una sola vez, se divide por los años de vida); si otra amenaza usa el mismo control, se elige de la lista y su costo no se duplica. Se indica qué cambia y con qué valor nuevo (ver 4.5) |
 | **Origen de cada estimación** | Dato del fabricante o precio de mercado, historial propio, estadística o norma del sector, opinión de un experto, o estimación propia |
 
 ---

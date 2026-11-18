@@ -8,7 +8,7 @@ Una herramienta web para **aprender análisis de riesgos haciéndolo**: eliges u
 
 Es un proyecto estudiantil. Mientras estudiaba gestión de riesgos quise ver la materia funcionando en vivo, no solo en fórmulas sueltas: qué pasa con el ALE si un control baja el factor de exposición, por qué un riesgo puede bajar en pesos y no en notas, cuándo un control cuesta más de lo que ahorra.
 
-La idea no es mía desde cero. Tomé el método de clase, inspirado en [MAGERIT](https://administracionelectronica.gob.es/pae_Home/pae_Documentacion/pae_Metodolog/pae_Magerit.html), y lo convertí en algo que se pudiera tocar. Por eso existe el **modo estudio**: muestra cada cálculo con sus números, explica las siglas y avisa de los errores típicos.
+La idea no es mía desde cero. Tomé el método de clase, inspirado en [MAGERIT](https://administracionelectronica.gob.es/documentacion/metodologias-guias/pae-magerit), y lo convertí en algo que se pudiera tocar. Por eso existe el **modo estudio**: muestra cada cálculo con sus números, explica las siglas y avisa de los errores típicos.
 
 ### Sobre cómo se hizo
 
