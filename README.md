@@ -85,4 +85,4 @@ python3 tools/verificar_casos.py
 
 ## Licencia
 
-Distribuido bajo la licencia [MIT](LICENSE).
+[MIT](LICENSE)
