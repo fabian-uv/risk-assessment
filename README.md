@@ -1,7 +1,5 @@
 # Risk Assessment
 
-**Pruébala en línea: [fabian-uv.github.io/risk-assessment](https://fabian-uv.github.io/risk-assessment/)**
-
 Una herramienta web para **aprender análisis de riesgos haciéndolo**: eliges un activo, le pones una amenaza y un control, y ves cuánto riesgo hay antes y después, en pesos y en notas de 1 a 5. Al final decides qué haces con cada riesgo: mitigarlo, transferirlo, aceptarlo o evitarlo.
 
 ![Pantalla de inicio: una tarjeta por concepto y, al lado, el apéndice del modo estudio](docs/captura.png)
