@@ -85,4 +85,4 @@ python3 tools/verificar_casos.py
 
 ## Licencia
 
-[MIT](LICENSE): puedes usarla, copiarla, modificarla y compartirla libremente, también en tus propios proyectos, siempre que mantengas el aviso de licencia.
+[MIT](LICENSE). Úsala como quieras.
