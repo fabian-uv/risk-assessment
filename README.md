@@ -1,5 +1,7 @@
 # Risk Assessment
 
+[![herramienta interactiva de estudio](https://img.shields.io/badge/herramienta_interactiva_de_estudio-54d03f)](https://github.com/fabianubv?tab=repositories&q=topic%3Aherramienta-interactiva-de-estudio) [![en línea: abrir](https://img.shields.io/badge/en_l%C3%ADnea-abrir-54d03f)](https://fabianubv.github.io/risk-assessment/) [![licencia: MIT](https://img.shields.io/badge/licencia-MIT-54d03f)](LICENSE)
+
 Una herramienta web para **aprender análisis de riesgos haciéndolo**: eliges un activo, agregas una amenaza y un control, y ves cuánto riesgo hay antes y después, en pesos y en notas de 1 a 5. Al final decides qué haces con cada riesgo: mitigarlo, transferirlo, aceptarlo o evitarlo.
 
 ![Pantalla de inicio: una tarjeta por concepto y, al lado, el apéndice del modo estudio](docs/captura.png)
