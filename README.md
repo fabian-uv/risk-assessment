@@ -82,3 +82,7 @@ python3 tools/verificar_casos.py
 - Es una herramienta para aprender, **no reemplaza una auditoría profesional**. Está inspirada en MAGERIT, pero no es una implementación certificada del método.
 - Una amenaza tiene un solo control a la vez.
 - Los montos son en pesos chilenos, sin decimales.
+
+## Licencia
+
+[MIT](LICENSE): puedes usarla, copiarla, modificarla y compartirla libremente, también en tus propios proyectos, siempre que mantengas el aviso de licencia.
