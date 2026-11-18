@@ -1,0 +1,126 @@
+/* Tokens de color (identidad propia: blanco, tinta y un acento petróleo).
+   Respaldo con prefers-color-scheme; light-dark() donde existe.
+   El <meta name="color-scheme"> permite fijar claro u oscuro. */
+:root {
+  --fondo-l: #f2f3f5;
+  --fondo-d: #0b0e10;
+  --superficie-l: #ffffff;
+  --superficie-d: #15191c;
+  --superficie-2-l: #f5f6f7;
+  --superficie-2-d: #1b2024;
+  --hundido-l: #eef0f2;
+  --hundido-d: #20262a;
+  --texto-l: #16191d;
+  --texto-d: #e8ebed;
+  --tenue-l: #5c636b;
+  --tenue-d: #9aa3ab;
+  --linea-l: #e6e8eb;
+  --linea-d: #2a3035;
+  --linea-fuerte-l: #b9bfc6;
+  --linea-fuerte-d: #4a535b;
+  --acento-l: #0b6e75;
+  --acento-d: #6cc6cb;
+  --acento-texto-l: #ffffff;
+  --acento-texto-d: #062a2d;
+  --acento-suave-l: #e7f2f2;
+  --acento-suave-d: #12292b;
+  --foco-l: #0b6e75;
+  --foco-d: #6cc6cb;
+  --error-l: #b3261e;
+  --error-d: #ffb4ab;
+  --error-fondo-l: #fdecea;
+  --error-fondo-d: #3b1c1a;
+  --aviso-fondo-l: #fff6e0;
+  --aviso-fondo-d: #2e2713;
+  --aviso-borde-l: #c99a1b;
+  --aviso-borde-d: #9b7a22;
+  --bajo-fondo-l: #e4f2ea;
+  --bajo-fondo-d: #173326;
+  --bajo-texto-l: #1f5b3d;
+  --bajo-texto-d: #9fdcb8;
+  --medio-fondo-l: #fbf0cf;
+  --medio-fondo-d: #352d12;
+  --medio-texto-l: #664a00;
+  --medio-texto-d: #ecd27c;
+  --alto-fondo-l: #fbe2da;
+  --alto-fondo-d: #3e1f18;
+  --alto-texto-l: #8e2a12;
+  --alto-texto-d: #f4ad9a;
+  --fondo: var(--fondo-l);
+  --superficie: var(--superficie-l);
+  --superficie-2: var(--superficie-2-l);
+  --hundido: var(--hundido-l);
+  --texto: var(--texto-l);
+  --tenue: var(--tenue-l);
+  --linea: var(--linea-l);
+  --linea-fuerte: var(--linea-fuerte-l);
+  --acento: var(--acento-l);
+  --acento-texto: var(--acento-texto-l);
+  --acento-suave: var(--acento-suave-l);
+  --foco: var(--foco-l);
+  --error: var(--error-l);
+  --error-fondo: var(--error-fondo-l);
+  --aviso-fondo: var(--aviso-fondo-l);
+  --aviso-borde: var(--aviso-borde-l);
+  --bajo-fondo: var(--bajo-fondo-l);
+  --bajo-texto: var(--bajo-texto-l);
+  --medio-fondo: var(--medio-fondo-l);
+  --medio-texto: var(--medio-texto-l);
+  --alto-fondo: var(--alto-fondo-l);
+  --alto-texto: var(--alto-texto-l);
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: var(--fondo-d);
+    --superficie: var(--superficie-d);
+    --superficie-2: var(--superficie-2-d);
+    --hundido: var(--hundido-d);
+    --texto: var(--texto-d);
+    --tenue: var(--tenue-d);
+    --linea: var(--linea-d);
+    --linea-fuerte: var(--linea-fuerte-d);
+    --acento: var(--acento-d);
+    --acento-texto: var(--acento-texto-d);
+    --acento-suave: var(--acento-suave-d);
+    --foco: var(--foco-d);
+    --error: var(--error-d);
+    --error-fondo: var(--error-fondo-d);
+    --aviso-fondo: var(--aviso-fondo-d);
+    --aviso-borde: var(--aviso-borde-d);
+    --bajo-fondo: var(--bajo-fondo-d);
+    --bajo-texto: var(--bajo-texto-d);
+    --medio-fondo: var(--medio-fondo-d);
+    --medio-texto: var(--medio-texto-d);
+    --alto-fondo: var(--alto-fondo-d);
+    --alto-texto: var(--alto-texto-d);
+  }
+}
+@supports (color: light-dark(white, black)) {
+  :root {
+    --fondo: light-dark(var(--fondo-l), var(--fondo-d));
+    --superficie: light-dark(var(--superficie-l), var(--superficie-d));
+    --superficie-2: light-dark(var(--superficie-2-l), var(--superficie-2-d));
+    --hundido: light-dark(var(--hundido-l), var(--hundido-d));
+    --texto: light-dark(var(--texto-l), var(--texto-d));
+    --tenue: light-dark(var(--tenue-l), var(--tenue-d));
+    --linea: light-dark(var(--linea-l), var(--linea-d));
+    --linea-fuerte: light-dark(var(--linea-fuerte-l), var(--linea-fuerte-d));
+    --acento: light-dark(var(--acento-l), var(--acento-d));
+    --acento-texto: light-dark(var(--acento-texto-l), var(--acento-texto-d));
+    --acento-suave: light-dark(var(--acento-suave-l), var(--acento-suave-d));
+    --foco: light-dark(var(--foco-l), var(--foco-d));
+    --error: light-dark(var(--error-l), var(--error-d));
+    --error-fondo: light-dark(var(--error-fondo-l), var(--error-fondo-d));
+    --aviso-fondo: light-dark(var(--aviso-fondo-l), var(--aviso-fondo-d));
+    --aviso-borde: light-dark(var(--aviso-borde-l), var(--aviso-borde-d));
+    --bajo-fondo: light-dark(var(--bajo-fondo-l), var(--bajo-fondo-d));
+    --bajo-texto: light-dark(var(--bajo-texto-l), var(--bajo-texto-d));
+    --medio-fondo: light-dark(var(--medio-fondo-l), var(--medio-fondo-d));
+    --medio-texto: light-dark(var(--medio-texto-l), var(--medio-texto-d));
+    --alto-fondo: light-dark(var(--alto-fondo-l), var(--alto-fondo-d));
+    --alto-texto: light-dark(var(--alto-texto-l), var(--alto-texto-d));
+  }
+}
+:root:has(> head > meta[name="color-scheme"][content="dark"]) { color-scheme: dark; }
+:root:has(> head > meta[name="color-scheme"][content="light"]) { color-scheme: light; }
