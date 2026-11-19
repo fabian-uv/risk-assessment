@@ -2,25 +2,25 @@
 
 [![herramienta interactiva de estudio](https://img.shields.io/badge/herramienta_interactiva_de_estudio-54d03f)](https://github.com/fabianubv?tab=repositories&q=topic%3Aherramienta-interactiva-de-estudio) [![en línea: abrir](https://img.shields.io/badge/en_l%C3%ADnea-abrir-54d03f)](https://fabianubv.github.io/risk-assessment/) [![licencia: MIT](https://img.shields.io/badge/licencia-MIT-54d03f)](LICENSE)
 
-Una herramienta web para **aprender análisis de riesgos haciéndolo**: eliges un activo, agregas una amenaza y un control, y ves cuánto riesgo hay antes y después, en pesos y en notas de 1 a 5. Al final decides qué haces con cada riesgo: mitigarlo, transferirlo, aceptarlo o evitarlo.
+Una herramienta web para aprender análisis de riesgos haciéndolo: eliges un activo, agregas una amenaza y un control, y ves cuánto riesgo hay antes y después, en pesos y en notas de 1 a 5. Al final decides qué haces con cada riesgo: mitigarlo, transferirlo, aceptarlo o evitarlo.
 
 ![Pantalla de inicio: una tarjeta por concepto y, al lado, el apéndice del modo estudio](docs/captura.png)
 
 ## Por qué existe
 
-Es una **herramienta interactiva de estudio**. Mientras estudiaba gestión de riesgos quise ver la materia funcionando en vivo, no solo en fórmulas sueltas: qué pasa con el ALE si un control baja el factor de exposición, por qué un riesgo puede bajar en pesos y no en notas, cuándo un control cuesta más de lo que ahorra.
+Mientras estudiaba gestión de riesgos quise ver la materia funcionando en vivo, más allá de las fórmulas sueltas: qué pasa con el ALE si un control baja el factor de exposición, por qué un riesgo puede bajar en pesos y no en notas, cuándo un control cuesta más de lo que ahorra.
 
-Se basa en el método que vimos en clase, inspirado en [MAGERIT](https://administracionelectronica.gob.es/documentacion/metodologias-guias/pae-magerit), convertido en algo que se puede tocar. Por eso existe el **modo estudio**: muestra cada cálculo con sus números, explica las siglas y avisa de los errores típicos.
+Se basa en el método que vimos en clase, inspirado en [MAGERIT](https://administracionelectronica.gob.es/documentacion/metodologias-guias/pae-magerit), llevado a una página donde se puede probar. Por eso tiene un modo estudio: muestra cada cálculo con sus números, explica las siglas y avisa de los errores típicos.
 
 ## Qué hace
 
-- **Cinco pasos**, una idea por tarjeta: inicio, activo, amenaza y control, resultado y resumen.
-- **En pesos**: cuánto cuesta cada incidente (SLE), cuánto se pierde al año (ALE), cuánto ahorra el control y si ese ahorro paga lo que cuesta (valor neto).
-- **En notas de 1 a 5**: la probabilidad, según cuántas veces al año pasa (ARO), y el impacto, que mira cuatro cosas: confidencialidad, integridad, disponibilidad y dinero. La disponibilidad se mide contra cuánto tiempo puedes estar sin el activo (MTD).
-- **Tratamiento del riesgo**: el programa sugiere y explica por qué; la persona decide. Aceptar un riesgo por encima del umbral pide un formulario corto de excepción, con plan, fecha límite y revisión cada 3 meses.
-- **Resumen**: la lista ordenada de riesgos, una matriz de calor, los controles con su valor neto y las excepciones aceptadas.
-- **Modo estudio**: fórmulas con los números puestos, tablas de referencia y errores comunes, en un apéndice al lado de cada tarjeta.
-- **Ejemplo guiado**: un celular (rotura, robo y seguro) resuelto paso a paso, con una pregunta antes de cada respuesta.
+- Cinco pasos, una idea por tarjeta: inicio, activo, amenaza y control, resultado y resumen.
+- En pesos: cuánto cuesta cada incidente (SLE), cuánto se pierde al año (ALE), cuánto ahorra el control y si ese ahorro paga lo que cuesta (valor neto).
+- En notas de 1 a 5: la probabilidad, según cuántas veces al año pasa (ARO), y el impacto, que mira cuatro cosas: confidencialidad, integridad, disponibilidad y dinero. La disponibilidad se mide contra cuánto tiempo puedes estar sin el activo (MTD).
+- Tratamiento del riesgo: el programa sugiere y explica por qué; la persona decide. Aceptar un riesgo por encima del umbral pide un formulario corto de excepción, con plan, fecha límite y revisión cada 3 meses.
+- Resumen: la lista ordenada de riesgos, una matriz de calor, los controles con su valor neto y las excepciones aceptadas.
+- Modo estudio: fórmulas con los números puestos, tablas de referencia y errores comunes, en un apéndice al lado de cada tarjeta.
+- Ejemplo guiado: un celular (rotura, robo y seguro) resuelto paso a paso, con una pregunta antes de cada respuesta.
 - Tema claro y oscuro, uso con teclado y lector de pantalla, y diseño adaptado a celular.
 
 ## Usarlo
@@ -39,7 +39,7 @@ Lo desarrollé con Claude (IA de Anthropic) como asistente de programación: yo 
 | Archivo | Qué contiene |
 |---|---|
 | `index.html` | La página. |
-| `src/logica.js` | El cálculo, separado de la pantalla. Usa **fracciones exactas** (`BigInt`) y solo redondea al mostrar, así un 0,3 nunca se confunde con 1/3 al decidir una nota. |
+| `src/logica.js` | El cálculo, separado de la pantalla. Usa fracciones exactas (`BigInt`) y solo redondea al mostrar, así un 0,3 nunca se confunde con 1/3 al decidir una nota. |
 | `src/estado.js` | El análisis en memoria, el guardado local y la lectura y escritura de archivos. |
 | `src/vistas.js`, `src/app.js` | Las pantallas (funciones que devuelven HTML) y los eventos. |
 | `src/textos.js`, `src/guia.js` | Los textos del modo estudio y del ejemplo guiado, separados del código. |
@@ -74,14 +74,14 @@ python3 tools/verificar_casos.py
 
 ## Privacidad y seguridad
 
-- **Nada sale de tu navegador.** No hay servidor, cuentas, cookies ni seguimiento, y la app no se conecta a ningún otro sitio. Además, la página tiene una regla de seguridad (una *Content Security Policy*) que le prohíbe conectarse a internet o ejecutar código que no sea el suyo.
-- **Lo que escribes se trata como texto, nunca como código.** Si en el nombre de un activo alguien escribe algo que parece código de una página web, la app lo muestra tal cual, como letras, y no lo ejecuta.
-- **Los archivos guardados se revisan antes de abrirlos.** Si alguien modifica un `.json` a mano, la app lo rechaza o lo corrige, en vez de ejecutar lo que traiga o quedar trabada.
+- Nada sale de tu navegador. No hay servidor, cuentas, cookies ni seguimiento, y la página tiene una regla de seguridad (una *Content Security Policy*) que le prohíbe conectarse a internet o ejecutar código que no sea el suyo.
+- Lo que escribes se trata como texto. Si en el nombre de un activo alguien escribe algo que parece código de una página web, la app lo muestra tal cual, como letras, y no lo ejecuta.
+- Los archivos guardados se revisan antes de abrirlos. Si alguien modifica un `.json` a mano, la app lo rechaza o lo corrige; no ejecuta lo que traiga ni se queda trabada.
 - Los datos del ejemplo son ficticios.
 
 ## Límites
 
-- Es una herramienta para aprender, **no reemplaza una auditoría profesional**. Está inspirada en MAGERIT, pero no es una implementación certificada del método.
+- Es una herramienta para aprender y no reemplaza una auditoría profesional. Está inspirada en MAGERIT, pero no es una implementación certificada del método.
 - Una amenaza tiene un solo control a la vez.
 - Los montos son en pesos chilenos, sin decimales.
 
